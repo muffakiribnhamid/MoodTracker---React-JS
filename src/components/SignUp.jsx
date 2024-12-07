@@ -32,10 +32,12 @@ const SignUp = () => {
 
       // console.log(user);
       toast.success("Signup successful! Redirecting to login...",);
-      navigate("/login"); // Redirect to the login page
+      navigate("/home"); // Redirect to the login page
     } catch (error) {
       // console.error("Error during signup:", error);
       toast.error("Error creating account. Please try again.", error);
+      console.log(error);
+      
     }
   };
 
@@ -70,6 +72,7 @@ const SignUp = () => {
           />
 
           <select
+          className="bg-red-500 h-10 p-2 m-3"
           value={mood}
           onChange={(e) => setMood(e.target.value)} >
             <option value='happy'>Happy</option>
